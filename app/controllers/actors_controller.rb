@@ -43,7 +43,7 @@ class ActorsController < ApplicationController
   def update 
     a_id = params.fetch("the_id")
 
-    matching_records = Actor.where({ :id=> m_id })
+    matching_records = Actor.where({ :id=> a_id })
 
     the_actor = matching_records.at(0)
 
@@ -54,7 +54,7 @@ class ActorsController < ApplicationController
 
     the_actor.save
 
-    redirect_to("/actor/#{the_actor.id}")
+    redirect_to("/actors/#{the_actor.id}")
    
 
   end
